@@ -4,12 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./js/main.js" defer></script>
+    <script src="main.js" defer></script>
     <link rel="stylesheet" href="/styles.css">
     <title>todo</title>
 </head>
+
+
 <body>
-    <h1>Hello</h1>
+    <h1>todo</h1>
+    <div>
+        <p>add a new task</p>
+        <input id="new-task">
+        <button id="create-task">add</button>
+    </div>
+    <div id="todo-container">
+        <div class="todo">
+            <p class="todo-item">take out the dog</p>
+            <button class="todo-item">done</button>
+            <p class="todo-item delete">&#x274c</p>
+        </div>
+        <div class="todo">
+            <p class="todo-item">make dinner</p>
+            <button class="todo-item">done</button>
+            <p class="todo-item delete">&#x274c</p>
+        </div>
+        <div class="todo">
+            <p class="todo-item">revisit item 290 and comment</p>
+            <button class="todo-item">done</button>
+            <p class="todo-item delete">&#x274c</p>
+        </div>
+    </div>
     
 </body>
 </html>
