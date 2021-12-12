@@ -1,4 +1,9 @@
-import { addNewTodo } from "./modules/addNewTodo.js";
+import { addElisteners } from "./modules/addEListeners.js";
+
+
+
+/////// 1. Create task as an object and add it to array.
+/////// 2. Render the screen, for loop the task array.
 
 
 const todoController = () => {
@@ -10,18 +15,20 @@ const todoController = () => {
 }
 
 
+
+// const newTask = todoFactory("walk of fo fo fo ");
+// todos.push(newTask);
+
+
+
+
 //-----------------------------------------
 
 
 
 const todoView = () => {
-    addEventlisteners();
+    addElisteners();
     //changes UI/DOM
-}
-
-function addEventlisteners() {
-    const createTodoButton = document.querySelector("#create-todo");
-    createTodoButton.addEventListener("click", addNewTodo)
 }
 
 todoView();

@@ -13,13 +13,19 @@ export const addNewTodo = () => {
     newTodoDelete.textContent = "❌";
 
     newTodoContainer.className = "todo";
-    newTodoText.className = "todo-item";
-    newTodoButton.className = "todo-item";
+    newTodoText.className = "todo-item todo-text";
+    newTodoButton.className = "todo-item done-button";
     newTodoDelete.className = "todo-item delete";
+
+    newTodoDelete.position = "";
 
     newTodoContainer.appendChild(newTodoText);
     newTodoContainer.appendChild(newTodoButton);
     newTodoContainer.appendChild(newTodoDelete);
 
     body.appendChild(newTodoContainer);
+
 };
+
+
+
