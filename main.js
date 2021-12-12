@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { addElisteners } from "./modules/addEListeners.js";
 
 
@@ -38,3 +39,5 @@ todoView();
 const todoModel = () => {
     //data logic/backend
 }
+=======
+>>>>>>> newstart
