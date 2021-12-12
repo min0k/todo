@@ -15,18 +15,3 @@ body {
     grid-template-rows: 1fr 1fr auto;
 }
 
-h1 {
-      border-bottom: 2px solid black;
-      margin-bottom: 10px;
-  }
-
-
-.todo {
-    display: flex;
-    margin-top: 10px;
-}
-
-.todo-item {
-    margin-right: 10px;
-}
-
