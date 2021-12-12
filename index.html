@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="main.js" defer></script>
+    <script type="module" src="main.js" defer></script>
     <link rel="stylesheet" href="/styles.css">
     <title>todo</title>
 </head>
@@ -12,11 +12,13 @@
 
 <body>
     <h1>todo</h1>
+
     <div>
-        <p>add a new task</p>
-        <input id="new-task">
-        <button id="create-task">add</button>
+        <p>add a new todo</p>
+        <input id="new-todo-input">
+        <button id="create-todo">add</button>
     </div>
+
     <div id="todo-container">
         <div class="todo">
             <p class="todo-item">take out the dog</p>
