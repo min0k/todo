@@ -9,9 +9,26 @@ html {
   }
 
 body {
-    margin: 24px;
+    margin: 32px;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr auto;
 }
 
+h1 {
+  border-bottom: solid 1px black;
+}
+
+#new-todo-form {
+  margin-top: 34px;
+  margin-bottom: 24px;
+}
+
+.todo {
+  display: flex;
+  gap: 12px;
+  margin: 10px 0px;
+}
+
+.todo-done {
+  color: lightgray;
+}
