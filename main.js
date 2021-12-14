@@ -1,13 +1,20 @@
-
 const todoSubmitButtonEl = document.querySelector("#new-todo-submit");
 const todoInputEl = document.querySelector("#new-todo-text");
 const todoBody = document.querySelector("#todo-container");
 
-todoSubmitButtonEl.addEventListener("click", (e) => {
-    e.preventDefault();
+const todos = [];
 
+todoSubmitButtonEl.addEventListener("click", (e) => {
+    e.preventDefault();   
     if (!todoInputEl.value) return;
 
+    addTodoToArray();
+    renderTodos(e);
+});
+
+
+const renderTodos = (e) => {
+ 
     const todoContainer = document.createElement("div");
     todoContainer.className = "todo";
     
@@ -19,8 +26,8 @@ todoSubmitButtonEl.addEventListener("click", (e) => {
     const todoDeleteButtonEl = document.createElement("button");
     todoDeleteButtonEl.textContent = ("delete");
 
+
     todoTextEl.textContent = todoInputEl.value;
-    todoInputEl.value = "";
 
     todoContainer.appendChild(todoTextEl);
     todoContainer.appendChild(todoCheckboxEl);
@@ -28,11 +35,15 @@ todoSubmitButtonEl.addEventListener("click", (e) => {
     
     todoBody.appendChild(todoContainer);
 
-    todoDeleteButtonEl.addEventListener("click", (e) => {
+    const deleteMe = todos.findIndex(o => o.todoText === todoInputEl.value);
+
+    todoDeleteButtonEl.addEventListener("click", () => {
         todoDeleteButtonEl.parentElement.remove();
+        todos.splice(deleteMe, 1);
+        console.log(todos);
     })
 
-    todoCheckboxEl.addEventListener("click", (e) => {
+    todoCheckboxEl.addEventListener("click", () => {
         if (todoCheckboxEl.checked) {
             todoTextEl.classList.add("todo-done");
         } else {
@@ -40,5 +51,21 @@ todoSubmitButtonEl.addEventListener("click", (e) => {
         }
     })
 
-})
+    todoInputEl.value = "";
+ 
+}
+
+
+
+const addTodoToArray = () => {
+    const todoFactory = (todoText, status) => {
+        return {todoText, status}
+    }
+
+    const newTodo = todoFactory(todoInputEl.value, false);
+
+    todos.push(newTodo);
+
+    console.log(todos);
+}
 
