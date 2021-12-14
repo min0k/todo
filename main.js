@@ -9,22 +9,18 @@ const todoSubmitButtonEl = document.querySelector("#new-todo-submit");
 const todoInputEl = document.querySelector("#new-todo-text");
 
 todoSubmitButtonEl.addEventListener("click", (e) => {
-    e.preventDefault();   
-    if (!todoInputEl.value) return;
+  e.preventDefault();
+  if (!todoInputEl.value) return;
 
-    addTodoToArray();
-    renderTodos(e);
+  addTodoToArray();
+  renderTodos(e);
 });
 
-
 const addTodoToArray = () => {
-    const todoFactory = (todoText, status) => {
-        return {todoText, status}
-    }
-    const newTodo = todoFactory(todoInputEl.value, false);
-    todos.push(newTodo);
-    console.log(todos);
-}
-
-
-
+  const todoFactory = (todoText, status) => {
+    return { todoText, status };
+  };
+  const newTodo = todoFactory(todoInputEl.value, false);
+  todos.push(newTodo);
+  console.log(todos);
+};

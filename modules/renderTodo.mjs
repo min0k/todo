@@ -4,43 +4,40 @@ const todoInputEl = document.querySelector("#new-todo-text");
 const todoBody = document.querySelector("#todo-container");
 
 export const renderTodos = () => {
- 
-    const todoContainer = document.createElement("div");
-    todoContainer.className = "todo";
-    
-    const todoTextEl = document.createElement("p");
-    
-    const todoCheckboxEl = document.createElement("input");
-    todoCheckboxEl.type = "checkbox";
-    
-    const todoDeleteButtonEl = document.createElement("button");
-    todoDeleteButtonEl.textContent = ("delete");
+  const todoContainer = document.createElement("div");
+  todoContainer.className = "todo";
 
+  const todoTextEl = document.createElement("p");
 
-    todoTextEl.textContent = todoInputEl.value;
+  const todoCheckboxEl = document.createElement("input");
+  todoCheckboxEl.type = "checkbox";
 
-    todoContainer.appendChild(todoTextEl);
-    todoContainer.appendChild(todoCheckboxEl);
-    todoContainer.appendChild(todoDeleteButtonEl);
-    
-    todoBody.appendChild(todoContainer);
+  const todoDeleteButtonEl = document.createElement("button");
+  todoDeleteButtonEl.textContent = "delete";
 
-    const deleteMe = todoInputEl.value;
+  todoTextEl.textContent = todoInputEl.value;
 
-    todoDeleteButtonEl.addEventListener("click", () => {
-        todoDeleteButtonEl.parentElement.remove();
-        updateTodosArray(deleteMe);
-        console.log(todos);
-    })
+  todoContainer.appendChild(todoTextEl);
+  todoContainer.appendChild(todoCheckboxEl);
+  todoContainer.appendChild(todoDeleteButtonEl);
 
-    todoCheckboxEl.addEventListener("click", () => {
-        if (todoCheckboxEl.checked) {
-            todoTextEl.classList.add("todo-done");
-        } else {
-            todoTextEl.classList.remove("todo-done");
-        }
-    })
+  todoBody.appendChild(todoContainer);
 
-    todoInputEl.value = "";
- 
-}
+  const deleteMe = todoInputEl.value;
+
+  todoDeleteButtonEl.addEventListener("click", () => {
+    todoDeleteButtonEl.parentElement.remove();
+    updateTodosArray(deleteMe);
+    console.log(todos);
+  });
+
+  todoCheckboxEl.addEventListener("click", () => {
+    if (todoCheckboxEl.checked) {
+      todoTextEl.classList.add("todo-done");
+    } else {
+      todoTextEl.classList.remove("todo-done");
+    }
+  });
+
+  todoInputEl.value = "";
+};
