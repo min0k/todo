@@ -2,7 +2,7 @@ const todoSubmitButtonEl = document.querySelector("#new-todo-submit");
 const todoInputEl = document.querySelector("#new-todo-text");
 const todoBody = document.querySelector("#todo-container");
 
-const todos = [];
+let todos = [];
 
 todoSubmitButtonEl.addEventListener("click", (e) => {
     e.preventDefault();   
@@ -35,11 +35,11 @@ const renderTodos = (e) => {
     
     todoBody.appendChild(todoContainer);
 
-    const deleteMe = todos.findIndex(o => o.todoText === todoInputEl.value);
+    const deleteMe = todoInputEl.value;
 
     todoDeleteButtonEl.addEventListener("click", () => {
         todoDeleteButtonEl.parentElement.remove();
-        todos.splice(deleteMe, 1);
+        todos = todos.filter((obj) => obj.todoText !== deleteMe);
         console.log(todos);
     })
 
