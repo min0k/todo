@@ -11,7 +11,6 @@ const todoInputEl = document.querySelector("#new-todo-text");
 todoSubmitButtonEl.addEventListener("click", (e) => {
   e.preventDefault();
   if (!todoInputEl.value) return;
-
   addTodoToArray();
   renderTodos(e);
 });
@@ -24,3 +23,32 @@ const addTodoToArray = () => {
   todos.push(newTodo);
   console.log(todos);
 };
+
+
+
+
+///////
+
+// const householdMembers = [
+//   {name: "hootchi", species: "owl"},
+//   {name: "squish", species: "sheep"},
+//   {name: "pillb", species: "idk"},
+//   {name: "mino", species: "human"},
+//   {name: "swoley", species: "human"},
+// ]
+
+
+// const humans = householdMembers.filter(members => {
+//   return members.species === "human";
+// })
+
+// const mutate = householdMembers.map(members => {
+//   members.species = "mutation"
+//   return members;
+// })
+
+
+
+
+
+

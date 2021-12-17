@@ -11,6 +11,7 @@
     "url": "git+https://github.com/min0k/todo.git"
   },
   "keywords": [],
+  
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -18,7 +19,6 @@
   },
   "homepage": "https://github.com/min0k/todo#readme",
   "devDependencies": {
-    "eslint": "^8.4.1",
     "prettier": "2.5.1"
   }
 }
